@@ -1,0 +1,14 @@
+.header {
+  min-height: 70px;
+  display: flex;
+  justify-content: start;
+  padding: 20px;
+  align-items: center;
+  background: #212529;
+  gap: 5px;
+}
+
+.head__content {
+  color: white;
+  font-size: 35px;
+}
