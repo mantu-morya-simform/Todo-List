@@ -1,32 +1,30 @@
-import type { ItemType } from "../../types/ItemType";
 import TodoItem from "./TodoItem";
 import "./Todo.css";
-import {
-  getSpecificTodoData,
-  getTodoData,
-  updateTodoData,
-} from "../../Utill/TodoData";
+import type { ItemType } from "../../types/ItemType";
 
-const TodoList = () => {
-  function handleCompleteToggle(id: number) {
-    const completedTask = getSpecificTodoData(id);
-    const allData = getTodoData();
-    const removeSelectedData: ItemType[] =
-      allData.filter((data) => data.id !== completedTask.id) || [];
+type TodoListProps = {
+  todos: ItemType[];
+  onToggleTodo: (id: number) => void;
+  onDeleteTodo: (id: number) => void;
+  onEditTodo: (id: number, newTitle: string) => void;
+};
 
-    updateTodoData(
-      {
-        ...completedTask,
-        completed: !completedTask.completed,
-      },
-      removeSelectedData,
-    );
-  }
-
+const TodoList = ({
+  todos,
+  onToggleTodo,
+  onDeleteTodo,
+  onEditTodo,
+}: TodoListProps) => {
   return (
     <div className="todo__list">
-      {getTodoData().map((task: ItemType) => (
-        <TodoItem key={task.id} item={task} onComplete={handleCompleteToggle} />
+      {todos.map((task) => (
+        <TodoItem
+          key={task.id}
+          item={task}
+          onToggle={onToggleTodo}
+          onDelete={onDeleteTodo}
+          onEdit={onEditTodo}
+        />
       ))}
     </div>
   );

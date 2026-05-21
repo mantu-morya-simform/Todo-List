@@ -1,6 +1,11 @@
 import "./Progress.css";
 
-function Progress() {
+type ProgressProps = {
+  completedCount: number;
+  totalCount: number;
+};
+
+function Progress({ completedCount, totalCount }: ProgressProps) {
   return (
     <div className="progress">
       <div className="progress__message">
@@ -8,7 +13,9 @@ function Progress() {
         <p>Keep it Up</p>
       </div>
       <div className="progress__task__count">
-        <p>2/3</p>
+        <p>
+          {completedCount}/{totalCount}
+        </p>
       </div>
     </div>
   );
