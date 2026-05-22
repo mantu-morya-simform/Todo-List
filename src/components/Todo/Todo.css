@@ -1,0 +1,48 @@
+.todo__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #ffc078;
+  min-width: 500px;
+  min-height: 60px;
+  align-self: center;
+  justify-self: center;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.task__name {
+  font-size: 21px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.task__name__completed {
+  text-decoration: line-through;
+  color: #12b886;
+}
+
+.task__utility {
+  display: flex;
+  gap: 10px;
+}
+
+.todo__list {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.toggle {
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  border: 2px solid #74b816;
+  cursor: pointer;
+}
+
+.select {
+  background: #12b886;
+}
