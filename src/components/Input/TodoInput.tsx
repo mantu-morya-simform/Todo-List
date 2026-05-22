@@ -1,23 +1,19 @@
 import { useState } from "react";
 import "./Input.css";
 import { BiSolidMessageSquareAdd } from "react-icons/bi";
-import type { ItemType } from "../../types/ItemType";
-import { setTododata } from "../../Utill/TodoData";
 
-const TodoInput = () => {
+type TodoInputProps = {
+  onAddTodo: (title: string) => void;
+};
+
+const TodoInput = ({ onAddTodo }: TodoInputProps) => {
   const [inputValue, setInputValue] = useState<string>("");
+
   function handleClick() {
-    if (inputValue.trim() === "") return;
-    const data: ItemType = {
-      id: Date.now(),
-      title: inputValue,
-      completed: false,
-    };
-    setTododata(data);
+    onAddTodo(inputValue);
     setInputValue("");
-    // Trigger storage event for other components
-    window.dispatchEvent(new Event("storage"));
   }
+
   return (
     <div className="todo__input">
       <input
