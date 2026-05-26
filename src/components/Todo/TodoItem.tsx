@@ -2,7 +2,6 @@ import "./Todo.css";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
 import type { ItemType } from "../../types/ItemType";
-import type React from "react";
 import { useState } from "react";
 
 type TodoItemProps = {
@@ -16,17 +15,8 @@ const TodoItem = ({ item, onToggle, onDelete, onEdit }: TodoItemProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editValue, setEditValue] = useState(item.title);
 
-  // if (item && item.completed) {
-  //   target.parentElement?.classList.toggle("task__name__completed");
-  // }
-
-  const handleToggleClick = (e: React.MouseEvent<HTMLParagraphElement>) => {
-    const target = e.target;
-    if (!(target instanceof HTMLParagraphElement)) return;
-    target.classList.toggle("select");
+  const handleToggleClick = () => {
     onToggle(item.id);
-    target.parentElement?.classList.toggle("task__name__completed");
-    console.log(target.parentElement);
   };
 
   const handleDeleteClick = () => {
@@ -53,20 +43,24 @@ const TodoItem = ({ item, onToggle, onDelete, onEdit }: TodoItemProps) => {
 
   return (
     <div className="todo__item">
-      <div className="task__name">
-        <p onClick={handleToggleClick} className="toggle"></p>
+      <div
+        className={`task__name ${
+          item.completed ? "task__name__completed" : ""
+        }`}
+      >
+        <p
+          onClick={!isEditing ? handleToggleClick : undefined}
+          className="toggle"
+        ></p>
         {isEditing ? (
           <input
+            className="edit__input"
             type="text"
             value={editValue}
             onChange={(e) => setEditValue(e.target.value)}
           />
         ) : (
-          <p
-            style={{
-              textDecoration: item.completed ? "line-through" : "none",
-            }}
-          >
+          <p className={item.completed ? "completed__text" : ""}>
             {item.title}
           </p>
         )}
@@ -74,22 +68,23 @@ const TodoItem = ({ item, onToggle, onDelete, onEdit }: TodoItemProps) => {
       <div className="task__utility">
         {isEditing ? (
           <>
-            <button onClick={handleSaveEdit}>Save</button>
-            <button onClick={handleCancelEdit}>Cancel</button>
+            <button className="save__btn" onClick={handleSaveEdit}>
+              Save
+            </button>
+            <button className="cancel__btn" onClick={handleCancelEdit}>
+              Cancel
+            </button>
           </>
         ) : (
           <>
             <FaRegEdit
+              className="todo__icon"
               color="white"
-              size={30}
               onClick={handleEditClick}
-              style={{ cursor: "pointer" }}
             />
             <RiDeleteBinLine
-              color="white"
-              size={30}
+              className="todo__icon"
               onClick={handleDeleteClick}
-              style={{ cursor: "pointer" }}
             />
           </>
         )}

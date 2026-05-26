@@ -10,6 +10,10 @@ const TodoInput = ({ onAddTodo }: TodoInputProps) => {
   const [inputValue, setInputValue] = useState<string>("");
 
   function handleClick() {
+    if (typeof Number(inputValue) === "number") {
+      alert("Cant Give Number As Todo");
+      return;
+    }
     onAddTodo(inputValue);
     setInputValue("");
   }

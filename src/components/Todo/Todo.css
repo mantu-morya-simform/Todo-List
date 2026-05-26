@@ -31,7 +31,7 @@
 }
 
 .todo__list {
-  max-height: 250px;
+  max-height: 280px;
   overflow: auto;
 }
 
@@ -45,4 +45,89 @@
 
 .select {
   background: #12b886;
+}
+
+.completed__text {
+  text-decoration: line-through;
+}
+
+.todo__icon {
+  cursor: pointer;
+  color: white;
+  height: 30px;
+  width: 30px;
+}
+
+.edit__input {
+  width: 280px;
+  height: 42px;
+  padding: 0 14px;
+  border: 2px solid #ffc078;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.save__btn,
+.cancel__btn {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.save__btn {
+  background: #12b886;
+  color: white;
+}
+
+.save__btn:hover {
+  background: rgba(18, 184, 134, 0.3);
+}
+
+.cancel__btn {
+  background: #495057;
+  color: white;
+}
+
+.cancel__btn:hover {
+  background: #343a40;
+}
+
+@media (max-width: 550px) {
+  .todo__list {
+    padding: 0 10px;
+  }
+
+  .todo__item {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .task__name {
+    width: 100%;
+    font-size: 16px;
+    word-break: break-word;
+  }
+
+  .task__utility {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .edit__input {
+    width: 100%;
+  }
 }
