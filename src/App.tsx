@@ -17,8 +17,6 @@ import {
 
 function App() {
   const [todos, setTodos] = useState<ItemType[]>(() => loadTodos());
-
-  console.log("helloo");
   // save to localStorage whenever todos change
   useEffect(() => {
     saveTodos(todos);
