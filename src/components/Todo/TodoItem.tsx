@@ -50,7 +50,7 @@ const TodoItem = ({ item, onToggle, onDelete, onEdit }: TodoItemProps) => {
       >
         <p
           onClick={!isEditing ? handleToggleClick : undefined}
-          className="toggle"
+          className={`toggle ${item.completed ? "select" : ""}`}
         ></p>
         {isEditing ? (
           <input
