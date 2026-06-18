@@ -11,3 +11,16 @@
   color: white;
   font-size: 35px;
 }
+
+
+@media (max-width: 550px) {
+  .head__content {
+    color: white;
+    font-size: 20px;
+  }
+
+  .check {
+    height: 30px;
+    width: 30px;
+  }
+}

@@ -32,3 +32,40 @@
   outline: none;
   cursor: pointer;
 }
+
+
+@media (max-width: 768px) {
+  .todo__input {
+    gap: 120px;
+  }
+
+  .task__input {
+    width: 320px;
+    padding: 10px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo__input {
+    padding: 0 10px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .task__input {
+    width: 80%;
+    padding: 10px 15px;
+  }
+
+  .task__input::placeholder {
+    font-size: 16px;
+  }
+
+  .add__icon__outer {
+    width: 20%;
+    height: 45px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+}

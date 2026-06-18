@@ -31,3 +31,28 @@
   font-size: 30px;
   font-weight: 500;
 }
+
+
+
+
+@media (max-width: 480px) {
+  .progress {
+    padding: 40px 20px;
+    min-width: 95%;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .progress__message {
+    font-size: 20px;
+  }
+
+  .progress__task__count {
+    height: 80px;
+    width: 80px;
+  }
+
+  .progress__task__count p {
+    font-size: 20px;
+  }
+}

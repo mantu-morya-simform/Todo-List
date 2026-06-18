@@ -10,7 +10,12 @@ const TodoInput = ({ onAddTodo }: TodoInputProps) => {
   const [inputValue, setInputValue] = useState<string>("");
 
   function handleClick() {
-    if (typeof Number(inputValue) === "number") {
+    if (!inputValue.trim()) {
+      alert("Please Enter A Todo");
+      return;
+    }
+
+    if (!isNaN(Number(inputValue))) {
       alert("Cant Give Number As Todo");
       return;
     }

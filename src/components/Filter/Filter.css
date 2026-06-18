@@ -1,0 +1,17 @@
+.filter__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+.label__radio {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.label__radio input {
+  cursor: pointer;
+}

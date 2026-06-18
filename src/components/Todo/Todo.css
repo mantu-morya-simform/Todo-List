@@ -15,7 +15,6 @@
   font-size: 21px;
   color: white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 10px;
 }
@@ -31,7 +30,7 @@
 }
 
 .todo__list {
-  max-height: 280px;
+  max-height: 350px;
   overflow: auto;
 }
 
@@ -41,6 +40,7 @@
   border-radius: 50px;
   border: 2px solid #74b816;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .select {
@@ -62,7 +62,7 @@
   width: 280px;
   height: 42px;
   padding: 0 14px;
-  border: 2px solid #ffc078;
+  border: 1px solid #ffc078;
   border-radius: 8px;
   background-color: #1e1e1e;
   color: white;
@@ -74,7 +74,6 @@
 .save__btn,
 .cancel__btn {
   border: none;
-  padding: 5px 10px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
@@ -87,47 +86,76 @@
   color: white;
 }
 
-.save__btn:hover {
-  background: rgba(18, 184, 134, 0.3);
-}
-
 .cancel__btn {
   background: #495057;
   color: white;
 }
 
-.cancel__btn:hover {
-  background: #343a40;
+/* tablet */
+@media (max-width: 768px) {
+  .todo__item {
+    min-width: 90%;
+    padding: 12px 16px;
+  }
+
+  .task__name {
+    font-size: 18px;
+  }
+
+  .edit__input {
+    width: 220px;
+  }
+
+  .todo__list {
+    min-height: 300px;
+    padding: 50px;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+
 }
 
+/* mobile */
 @media (max-width: 550px) {
   .todo__list {
     padding: 0 10px;
   }
 
   .todo__item {
+    min-width: 100%;
     width: 100%;
-    max-width: 100%;
     min-height: auto;
     padding: 12px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    flex-direction: row;
+    gap: 10px;
   }
 
   .task__name {
-    width: 100%;
+    flex: 1;
     font-size: 16px;
     word-break: break-word;
   }
 
   .task__utility {
-    width: 100%;
-    justify-content: flex-end;
-    flex-wrap: wrap;
+    flex-shrink: 0;
+    gap: 8px;
+  }
+
+  .todo__icon,
+  .toggle {
+    height: 24px;
+    width: 24px;
   }
 
   .edit__input {
     width: 100%;
+    font-size: 14px;
+  }
+
+  .save__btn,
+  .cancel__btn {
+    padding: 8px;
+    font-size: 12px;
   }
 }

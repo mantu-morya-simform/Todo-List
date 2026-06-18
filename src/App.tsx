@@ -14,14 +14,15 @@ import {
   editTodo,
   getCompletedCount,
 } from "./Utill/TodoData";
+import Filter from "./components/Filter/Filter";
 
 function App() {
   const [todos, setTodos] = useState<ItemType[]>(() => loadTodos());
+  const [filteredTodos, setFilteredTodos] = useState<ItemType[]>(todos);
 
-  console.log("helloo");
-  // save to localStorage whenever todos change
   useEffect(() => {
     saveTodos(todos);
+    setFilteredTodos(todos);
   }, [todos]);
 
   const handleAddTodo = (title: string) => {
@@ -47,8 +48,9 @@ function App() {
       <Header />
       <Progress completedCount={completedCount} totalCount={todos.length} />
       <TodoInput onAddTodo={handleAddTodo} />
+      <Filter todos={todos} onFilterChange={setFilteredTodos} />
       <TodoList
-        todos={todos}
+        todos={filteredTodos}
         onToggleTodo={handleToggleTodo}
         onDeleteTodo={handleDeleteTodo}
         onEditTodo={handleEditTodo}

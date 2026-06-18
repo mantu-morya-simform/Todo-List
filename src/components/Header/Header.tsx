@@ -3,7 +3,7 @@ import "./header.css";
 function Header() {
   return (
     <div className="header">
-      <MdOutlineLibraryAddCheck size={50} color="white" />{" "}
+      <MdOutlineLibraryAddCheck className="check" size={50} color="white" />{" "}
       <span className="head__content">Todo</span>
     </div>
   );
