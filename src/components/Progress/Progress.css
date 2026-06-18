@@ -2,34 +2,43 @@
   min-height: 250px;
   min-width: 500px;
   border-radius: 8px;
-  border: 2px solid #ffc078;
+  border: 1px solid var(--input-border);
   display: flex;
   justify-content: space-around;
   justify-self: center;
   margin-bottom: 20px;
   align-items: center;
+  background: var(--card-bg);
+  transition: all 0.3s ease;
 }
 
 .progress__message {
-  color: white;
-  font-size: 30px;
-  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 28px;
+  font-weight: 600;
 }
 
 .progress__task__count {
   height: 120px;
   width: 120px;
   border-radius: 50%;
-  background: #74b816;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.progress__task__count:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .progress__task__count p {
-  color: black;
-  font-size: 30px;
-  font-weight: 500;
+  color: var(--accent-text);
+  font-size: 32px;
+  font-weight: 700;
 }
 
 
