@@ -2,16 +2,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
   gap: 20px;
+  background: var(--card-bg);
+  border-radius: 6px;
+  margin: 10px auto;
+  max-width: 500px;
 }
 
 .label__radio {
   display: flex;
-  gap: 5px;
+  gap: 8px;
   cursor: pointer;
+  align-items: center;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .label__radio input {
   cursor: pointer;
+  accent-color: var(--accent-primary);
+  width: 18px;
+  height: 18px;
+}
+
+.label__radio:hover {
+  color: var(--accent-primary);
 }

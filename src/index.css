@@ -4,9 +4,111 @@
   box-sizing: border-box;
 }
 
+/* ============ Dark Theme (Default) ============ */
+:root {
+  /* Backgrounds */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+
+  /* Text */
+  --text-primary: #f9fafb;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  /* Components */
+  --card-bg: #1e293b;
+  --input-bg: #1e293b;
+  --input-border: #475569;
+  --btn-bg: #334155;
+  --btn-bg-hover: #475569;
+  --btn-text: #f9fafb;
+
+  /* Accents */
+  --border-color: #ffc078;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+  --accent-primary: #74b816;
+  --accent-secondary: #12b886;
+  --accent-text: #ffffff;
+
+  /* Icon & Special */
+  --icon-color: #e2e8f0;
+  --link-color: #60a5fa;
+}
+
+body.dark-theme {
+  /* Backgrounds */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+
+  /* Text */
+  --text-primary: #f9fafb;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  /* Components */
+  --card-bg: #1e293b;
+  --input-bg: #1e293b;
+  --input-border: #475569;
+  --btn-bg: #334155;
+  --btn-bg-hover: #475569;
+  --btn-text: #f9fafb;
+
+  /* Accents */
+  --border-color: #ffc078;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+  --accent-primary: #74b816;
+  --accent-secondary: #12b886;
+  --accent-text: #ffffff;
+
+  /* Icon & Special */
+  --icon-color: #e2e8f0;
+  --link-color: #60a5fa;
+}
+
+/* ============ Light Theme ============ */
+body.light-theme {
+  /* Backgrounds */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #78716c;
+
+  /* Components */
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --btn-bg: #e2e8f0;
+  --btn-bg-hover: #cbd5e1;
+  --btn-text: #0f172a;
+
+  /* Accents */
+  --border-color: #f59e0b;
+  --success: #16a34a;
+  --warning: #ea580c;
+  --info: #0284c7;
+  --accent-primary: #65a30d;
+  --accent-secondary: #0d9488;
+  --accent-text: #ffffff;
+
+  /* Icon & Special */
+  --icon-color: #334155;
+  --link-color: #0284c7;
+}
+
 body {
   min-height: 100vh;
-  background: #0f172a;
-  color: #f9fafb;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: "Inter", system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

@@ -15,15 +15,27 @@
   border-radius: 4px;
 }
 
+.task__input {
+  background: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--input-border);
+  transition: all 0.3s ease;
+}
+
+.task__input:focus {
+  border-color: var(--border-color);
+  box-shadow: 0 0 6px rgba(96, 165, 250, 0.2);
+}
+
 .task__input::placeholder {
-  font-size: 18px;
-  color: black;
+  font-size: 16px;
+  color: var(--text-muted);
 }
 
 .add__icon__outer {
   height: 50px;
   width: 50px;
-  background: #74b816;
+  background: var(--accent-primary);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -31,6 +43,18 @@
   border: none;
   outline: none;
   cursor: pointer;
+  color: var(--accent-text);
+  transition: all 0.3s ease;
+  font-size: 24px;
+}
+
+.add__icon__outer:hover {
+  background: var(--accent-secondary);
+  transform: scale(1.05);
+}
+
+.add__icon__outer:active {
+  transform: scale(0.95);
 }
 
 

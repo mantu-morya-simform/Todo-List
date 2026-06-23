@@ -77,11 +77,7 @@ const TodoItem = ({ item, onToggle, onDelete, onEdit }: TodoItemProps) => {
           </>
         ) : (
           <>
-            <FaRegEdit
-              className="todo__icon"
-              color="white"
-              onClick={handleEditClick}
-            />
+            <FaRegEdit className="todo__icon" onClick={handleEditClick} />
             <RiDeleteBinLine
               className="todo__icon"
               onClick={handleDeleteClick}

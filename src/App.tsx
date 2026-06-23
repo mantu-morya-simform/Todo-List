@@ -19,6 +19,18 @@ import Filter from "./components/Filter/Filter";
 function App() {
   const [todos, setTodos] = useState<ItemType[]>(() => loadTodos());
   const [filteredTodos, setFilteredTodos] = useState<ItemType[]>(todos);
+  const [mode, setMode] = useState<"light" | "dark">(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved === "light" || saved === "dark") return saved;
+    return "light"; // in case if i didn't find any them from LocalStorage
+  });
+
+  // Apply theme to body on mount
+  useEffect(() => {
+    document.body.classList.remove("light-theme", "dark-theme");
+    document.body.classList.add(`${mode}-theme`);
+    localStorage.setItem("theme", mode);
+  }, [mode]);
 
   useEffect(() => {
     saveTodos(todos);
@@ -41,11 +53,15 @@ function App() {
     setTodos((prev) => editTodo(prev, id, newTitle));
   };
 
+  const handleModeClick = () => {
+    setMode((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
   const completedCount = getCompletedCount(todos);
 
   return (
     <>
-      <Header />
+      <Header mode={mode} handleModeClick={handleModeClick} />
       <Progress completedCount={completedCount} totalCount={todos.length} />
       <TodoInput onAddTodo={handleAddTodo} />
       <Filter todos={todos} onFilterChange={setFilteredTodos} />
